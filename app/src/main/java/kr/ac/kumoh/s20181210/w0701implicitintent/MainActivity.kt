@@ -20,5 +20,16 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }
+        binding.btnMap.setOnClickListener{
+            val uri = Uri.parse("geo:0,0?z=17&q= 경상북도 구미시 거양길 14-6")
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)
+        }
+        binding.btnTel.setOnClickListener{
+            val uri = Uri.parse("sms:01046632761")
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            if(intent.resolveActivity(packageManager) != null)
+                startActivity(intent)
+        }
     }
 }
